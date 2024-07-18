@@ -22,6 +22,7 @@ export default function SearchScreen() {
       const movies = await fetchMovies(term, year);
       setMovies(movies);
     } catch (err) {
+      console.log(err)
       setError('Failed to fetch movies. Please try again later.');
     }
   }, []);

@@ -36,6 +36,6 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   content: {
     backgroundColor: Colors.dark.background,
-    paddingTop: StatusBar.currentHeight,
+    marginTop: StatusBar.currentHeight,
   },
 });

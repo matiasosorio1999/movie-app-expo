@@ -28,7 +28,7 @@ export default function SearchScreen() {
   }, []);
 
   const handleCard = (movieId: string) => {
-    navigation.navigate('movie/[id]', { id: movieId });
+    navigation.navigate('movie/details', { id: movieId });
   };
 
   return (

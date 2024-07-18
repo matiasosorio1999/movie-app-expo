@@ -28,7 +28,7 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{ contentStyle: styles.content }}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="movie/[id]" options={{ headerShown: false }} />
+      <Stack.Screen name="movie/details" options={{ headerShown: false }} />
     </Stack>
   );
 }

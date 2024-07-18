@@ -54,6 +54,9 @@ export default function SearchScreen() {
           )}
           keyExtractor={(item) => item.imdbID} />
       }
+      {(movies?.length === 0) && 
+        <Text style={styles.welcome}>Could not find any movies. Try a different title.</Text>
+      }
     </SafeAreaView>
   );
 }

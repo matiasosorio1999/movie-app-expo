@@ -1,32 +1,42 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { useNavigation } from 'expo-router';
+import { HomeScreenNavigationProp } from '@/types/navigation';
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const NotFoundScreen = () => {
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
-export default function NotFoundScreen() {
+  const handleGoHome = () => {
+    navigation.navigate('index');
+  };
+
   return (
-    <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen doesn't exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
-        </Link>
-      </ThemedView>
-    </>
+    <View style={styles.container}>
+      <Text style={styles.title}>Page Not Found</Text>
+      <Text style={styles.message}>The page you are looking for does not exist.</Text>
+      <Button title="Go Home" onPress={handleGoHome} />
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#fff',
   },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  message: {
+    fontSize: 16,
+    marginBottom: 32,
+    textAlign: 'center',
   },
 });
+
+export default NotFoundScreen;

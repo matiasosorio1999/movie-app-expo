@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# Movie App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Esta es una aplicación de búsqueda de películas construida con React Native y [Expo](https://docs.expo.dev/). La aplicación permite a los usuarios buscar películas por título y año, y ver los detalles de cada película.
 
-## Get started
+![Screenshot 1](./assets/screenshots/image1.png)
+![Screenshot 2](./assets/screenshots/image2.png)
 
-1. Install dependencies
+## Caracteristicas
+- Buscar películas por título y año
+- Ver una lista de resultados de búsqueda con imagen, título y calificación
+- Ver detalles completos de una película seleccionada, incluyendo descripción, director, actores, etc
+- Uso de estilos personalizados para el diseño
+- Manejo de estado local con React Hooks
+- Manejo de errores para proporcionar retroalimentación adecuada al usuario
+- Tests unitarios para asegurar la calidad del código
+
+## Requisitos
+- Node.js y npm
+
+## Instalacion
+
+1. Clonar el repo:
 
    ```bash
+   git clone https://github.com/matiasosorio1999/movie-app.git
+   cd movie-app
    npm install
    ```
 
-2. Start the app
+2. Instalar dependencias:
 
    ```bash
-    npx expo start
+    npm install
    ```
+3. Iniciar la app con Expo:
+   ```bash
+    npm start
+   ```
+4. Seguir las instrucciones en la terminal para abrir la aplicación en un emulador o dispositivo físico usando la aplicación Expo Go.
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Scripts Disponibles
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+Iniciar la aplicación para desarrollo:
 ```bash
-npm run reset-project
+  npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Construir la aplicación para producción:
+```bash
+  expo build
+```
 
-## Learn more
+Correr ESLint para verificar el código:
+```bash
+  npm run lint
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Correr los tests unitarios:
+```bash
+  npm test
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Estructura del Proyecto
+```bash
+movie-app/
+│
+├── app/
+│   ├── movie/
+│   │   └── [id].tsx
+│   ├── _layout.tsx
+│   ├── +not-found.tsx
+│   └── index.tsx
+│
+├── assets/
+│   ├── fonts/
+│   └── images/
+│
+├── components/
+│   ├── __tests__/
+│   ├── MovieCard.tsx
+│   └── SearchBar.tsx
+│
+├── constants/
+├── scripts/
+├── services/
+│   └── api.ts
+│
+├── types/
+│   ├── movies.ts
+│   └── navigation.ts
+│
+├── .eslintrc.js
+├── .gitignore
+├── app.json
+├── babel.config.js
+├── expo-env.d.ts
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## API Utilizada
+Los datos de las películas se obtienen de la [API de OMDB](https://www.omdbapi.com/).
